@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6325725307658926725}
   - component: {fileID: 731048052249613487}
+  - component: {fileID: 1271879267}
+  - component: {fileID: 1271879266}
+  - component: {fileID: 1271879263}
   m_Layer: 0
   m_Name: coins_0
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +84,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1271879267
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8363606548731170553}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &1271879266
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8363606548731170553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
+--- !u!114 &1271879263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8363606548731170553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c74393aee2291243a382725ea7668b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framesPerSecond: 7
+  frames:
+  - {fileID: 8003260396191338441, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
+  - {fileID: 2154074400079490951, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
+  - {fileID: -8722020019358736109, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
+  - {fileID: 7432920796079150873, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
+  - {fileID: -3076578299200870413, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
+  - {fileID: -6129140024025953609, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
+  coinExplosion: {fileID: 8259321010440995886, guid: a0fffdf06efce6447833a799be31bd70,
+    type: 3}
+  twinkleSound: {fileID: 8300000, guid: a6860eb48e72382488c1cb01d1132190, type: 3}
