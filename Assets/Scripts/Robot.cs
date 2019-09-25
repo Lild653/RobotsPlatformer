@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Robot : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,6 +12,9 @@ public class Robot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
     }
 }
