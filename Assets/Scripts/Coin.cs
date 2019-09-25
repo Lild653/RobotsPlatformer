@@ -44,6 +44,7 @@ public class Coin : MonoBehaviour
         Debug.Log("bitchasssss");
         AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
         Instantiate(coinExplosion, transform.position, Quaternion.identity);
+        ScoreTextScript.coinAmount += 1;
         Destroy(gameObject);
     }
 }
