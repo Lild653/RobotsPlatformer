@@ -143,7 +143,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 0
-  animationFPS: 30
+  animationFPS: 20
   idleFrames:
   - {fileID: 21300000, guid: edfeaaf83afdf4a75a099b224606f79a, type: 3}
   - {fileID: 21300000, guid: a4543ae701f3f492d9d59e6a28ae9ad7, type: 3}
@@ -154,7 +154,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9927eea2049814b09946aa24de22ab96, type: 3}
   - {fileID: 21300000, guid: e5081105ade7c45ea8b32113b3a3c23e, type: 3}
   - {fileID: 21300000, guid: fb31a7a1b64c54875858b3fa4980778c, type: 3}
-  movingFrames: []
+  movingFrames:
+  - {fileID: 21300000, guid: 7888686d077be44f68ad5a7e389d3d1d, type: 3}
+  - {fileID: 21300000, guid: c11328eefbf8b4c9db41eed8b454e83d, type: 3}
+  - {fileID: 21300000, guid: f7b1575f8359b4f979adb6e8b1469f38, type: 3}
+  - {fileID: 21300000, guid: d0b28ccbc1dca435bb856158e1ec2eb5, type: 3}
+  - {fileID: 21300000, guid: a9083b6c800cb4d7aa59dbcd797b2c98, type: 3}
+  - {fileID: 21300000, guid: 4cbcdab7fa7fc41d9a32a6d4952a6606, type: 3}
+  - {fileID: 21300000, guid: 1d36d45532a564ae79344f7e0ce62285, type: 3}
+  - {fileID: 21300000, guid: f3dac39bb10e949ff80980ebae7fdde5, type: 3}
   airFrames:
   - {fileID: 21300000, guid: b3d1c23b8ade14b308dcb099159caf9d, type: 3}
   - {fileID: 21300000, guid: f15bcf43b75354d86b1e5d97c7a020d2, type: 3}

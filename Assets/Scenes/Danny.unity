@@ -196,61 +196,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.size
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[0]
       value: 
       objectReference: {fileID: 21300000, guid: edfeaaf83afdf4a75a099b224606f79a,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: a4543ae701f3f492d9d59e6a28ae9ad7,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: 3abfb215b58c04a978b9f94e7dd9da58,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: 12f8f382c6bda4fda96019a8325150c4,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[4]
       value: 
       objectReference: {fileID: 21300000, guid: 4edfa7d2bb3a143aca4d402607babfeb,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[5]
       value: 
       objectReference: {fileID: 21300000, guid: ce2726ade1f634883b405c0d307e327e,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[6]
       value: 
       objectReference: {fileID: 21300000, guid: 9927eea2049814b09946aa24de22ab96,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[7]
       value: 
       objectReference: {fileID: 21300000, guid: e5081105ade7c45ea8b32113b3a3c23e,
         type: 3}
-    - target: {fileID: 1179920876122991068, guid: 0850a109d50be4f52b3f51a53f48ede5,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: idleFrames.Array.data[8]
       value: 
       objectReference: {fileID: 21300000, guid: fb31a7a1b64c54875858b3fa4980778c,
@@ -328,6 +318,7 @@ GameObject:
   - component: {fileID: 487290575}
   - component: {fileID: 487290574}
   - component: {fileID: 487290573}
+  - component: {fileID: 487290576}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -400,6 +391,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487290576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487290572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e537e363e0a964988f3c850e5f89e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  xMin: -10
+  xMax: 10
+  yMin: -10
+  yMax: 10
+  lerp: 1
+  minSpeed: 1
+  shakeTimeStandardStrong: 0.5
+  strengthStandardStrong: 0.5
+  shakeTimeStandardLight: 0.2
+  strengthStandardLight: 0.2
 --- !u!1001 &803801270
 PrefabInstance:
   m_ObjectHideFlags: 0
