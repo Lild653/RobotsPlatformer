@@ -123,7 +123,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 0
-  animationFPS: 5
+  animationFPS: 20
   idleFrames: []
   movingFrames: []
   airFrames: []
@@ -174,7 +174,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 0
-  animationFPS: 5
+  animationFPS: 30
   idleFrames:
   - {fileID: 21300000, guid: edfeaaf83afdf4a75a099b224606f79a, type: 3}
   - {fileID: 21300000, guid: a4543ae701f3f492d9d59e6a28ae9ad7, type: 3}
