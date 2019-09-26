@@ -3,41 +3,46 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject enemy;
-    public GameObject player;
-    public LineRenderer laserLineRenderer;
-    public GameObject bul;
     public float damage = 10f;
     public float range = 100f;
-    public Camera fpsCam; // this is going to be the player
-    // Start is called before the first frame update
+    public GameObject player;
+    SpriteRenderer sr;
+    SpriteRenderer enemy;
+    public GameObject bullet;
+    
     void Start()
     {
-        bul = GetComponent<GameObject>();
-
+        sr = GetComponent<SpriteRenderer>();
+        enemy = GetComponent<SpriteRenderer>();
     }
-    //IEnumerator shoot()
-    //{
-    //    yield return new WaitForSeconds(.1f);
-    //    Rigidbody proj = Instantiate(bul, transform.position, transform.rotation)as Rigidbody;
-    //    proj.velocity = transform.TransformDirection(new Vector3(0, 0, 20));
-    //}
-    void Shoot()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
 
-        }
-       
-    }
-   
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        { 
             Shoot();
         }
     }
+    void Shoot()
+    {
+        RaycastHit2D shot = Physics2D.Raycast(sr.transform.position, sr.transform.forward, range);
+        if (shot.collider!= null)
+        {
+            print("collider");
+            GameObject copybullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            Rigidbody2D rb2d = copybullet.GetComponent<Rigidbody2D>();
+            rb2d.velocity = new Vector2(1, 0) * 10;
+            
+            //Destroy(shot.collider.enemy);
+        }
+
+
+            //Debug.Log(hit.transform.name);
+            //SpriteRenderer target = hit.transform.enemy;
+            //if (target != null)
+            //{
+            //    target.TakeDamage(damage);
+            //}
+    }
 }
+

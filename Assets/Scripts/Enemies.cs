@@ -5,34 +5,18 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
 
-    SpriteRenderer sprite;
+    public float health = 50f; // can be changed
 
-    // Start is called before the first frame update
-    void Start()
+    public void TakeDamage(float amount)
     {
-        
-    }
-
-
-
-    void playerTracker()
-    {
-        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 5f);
-        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 5f);
-
-        if (left.collider.CompareTag("Player"))
+        health -= amount;
+        if (health <= 0f)
         {
-
-        }
-        if (right.collider.CompareTag("Player"))
-        {
-
+            Die();
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    void Die()
     {
-        
+        Destroy(gameObject);
     }
 }
