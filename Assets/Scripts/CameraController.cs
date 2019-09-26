@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform player;
     public float offsetX;
+    public float offsetY;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,12 @@ public class CameraController : MonoBehaviour
         if (player.position.x > (pos.x - offsetX))
         {
             pos.x = player.position.x + offsetX;
+            transform.position = pos;
+        }
+        
+        if(player.position.y < (pos.y - offsetY))
+        {
+            pos.y = player.position.y - offsetY;
             transform.position = pos;
         }
     }

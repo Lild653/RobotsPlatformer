@@ -10,11 +10,14 @@ public class MovingPlatformScript : MonoBehaviour
     public float maxDown = 2; 
     public float maxUp = 2;
 
+    private float changeSpeed;
+    private Vector3 ogPos;
     private Vector3 upPos;
     private Vector3 downPos;
     void Start()
     {
-        Vector3 ogPos = transform.position;
+        changeSpeed = speed;
+        ogPos = transform.position;
         upPos = ogPos + new Vector3(0,2,0);
         downPos = ogPos + new Vector3(0,2,0);
     }
@@ -22,15 +25,15 @@ public class MovingPlatformScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(upPos[1] - transform.position[1] >= maxUp)
+        if(ogPos[1] - transform.position[1] >= maxDown)
         {
-            speed = -speed;
+            changeSpeed = -changeSpeed;
         }
-        else if(transform.position[1] - downPos[1] >= maxDown)
+        else if(transform.position[1] -ogPos[1] >= maxUp)
         {
-            speed = -speed;
+            changeSpeed = -changeSpeed;
         }
-        transform.position = transform.position + new Vector3(0, 1, 0) * speed * Time.deltaTime;
+        transform.position = transform.position + new Vector3(0, 1, 0) * changeSpeed * Time.deltaTime;
 
     }
 }

@@ -7,6 +7,8 @@ TagManager:
   - CoinExplosion
   - Coin
   - Platform
+  - Spike
+  - VerticalPlatform
   layers:
   - Default
   - TransparentFX
