@@ -22,10 +22,19 @@ public class CameraController : MonoBehaviour
             pos.x = player.position.x + offsetX;
             transform.position = pos;
         }
-        
+        else if (player.position.x < (pos.x - offsetX))
+        {
+            pos.x = player.position.x + offsetX;
+            transform.position = pos;
+        }
         if(player.position.y < (pos.y - offsetY))
         {
             pos.y = player.position.y - offsetY;
+            transform.position = pos;
+        }
+        else if (player.position.y > (pos.y - offsetY))
+        {
+            pos.y = player.position.y + offsetY;
             transform.position = pos;
         }
     }
