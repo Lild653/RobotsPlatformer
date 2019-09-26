@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: -1406608939974236467
     second: intbuilding7a_3
+  - first:
+      213: 8854429079926026307
+    second: intbuilding7a_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -139,7 +142,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,7 +163,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +184,7 @@ TextureImporter:
         width: 32
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,6 +192,27 @@ TextureImporter:
       bones: []
       spriteID: a3912bffceaf0c0499966bf78d71f210
       internalID: -1406608939974236467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: intbuilding7a_4
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 118
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec1db179c19df746a8b75d4c45e009e
+      internalID: 8854429079926026307
       vertices: []
       indices: 
       edges: []
