@@ -71,7 +71,7 @@ public class Enemies : MonoBehaviour
     {
         if (canMoveForward() == true)
         {
-            rb2d.velocity
+            ;
         }
     }
 }
