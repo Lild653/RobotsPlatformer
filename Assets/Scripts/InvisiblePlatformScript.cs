@@ -1,18 +1,12 @@
-﻿//Author: Rinn Joireman
-
+﻿//Author: Rinn
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class InvisiblePlatformScript : MonoBehaviour
 {
-
-
     public float framesPerSecond = 2;
     public Sprite[] frames;
-    public GameObject coinExplosion;
-    public AudioClip twinkleSound;
-
 
     private SpriteRenderer spriteRenderer;
     private float frameTimer;
@@ -35,15 +29,5 @@ public class Coin : MonoBehaviour
             currentFrameIndex = currentFrameIndex%frames.Length;
             spriteRenderer.sprite = frames[currentFrameIndex];
         }
-    }
-
-    void OnCollisionEnter2D()
-    {
-
-        Debug.Log("bitchasssss");
-        AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
-        Instantiate(coinExplosion, transform.position, Quaternion.identity);
-        ScoreTextScript.coinAmount += 1;
-        Destroy(gameObject);
     }
 }

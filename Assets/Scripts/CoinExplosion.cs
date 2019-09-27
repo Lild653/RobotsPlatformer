@@ -17,7 +17,6 @@ public class CoinExplosion : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("Hey");
         spriteRenderer = GetComponent<SpriteRenderer>();
         frameTimer = (1f / framesPerSecond);
         currentFrameIndex = 0;
