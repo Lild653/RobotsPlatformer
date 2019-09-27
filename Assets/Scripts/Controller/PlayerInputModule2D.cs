@@ -28,7 +28,7 @@ public class PlayerInputModule2D : MonoBehaviour
 			input.Normalize ();
 		}
 		controller.input = input;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             controller.inputJump = true;
         }
