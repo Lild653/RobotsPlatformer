@@ -154,7 +154,7 @@ public class PlatformerController2D : MonoBehaviour
         // update animations
         if (!grounded)
         {
-            PlayBackAnimation(idleFrames);
+            PlayBackAnimation(airFrames);
         } else if (Mathf.Abs(rb2d.velocity.x) > 0.1f)
         {
             PlayBackAnimation(movingFrames);
