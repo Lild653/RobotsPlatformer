@@ -144,7 +144,7 @@ MonoBehaviour:
   - {fileID: -6129140024025953609, guid: 75a559f141bbabe4c9c8b1891b5b6631, type: 3}
   coinExplosion: {fileID: 8259321010440995886, guid: a0fffdf06efce6447833a799be31bd70,
     type: 3}
-  twinkleSound: {fileID: 8300000, guid: a6860eb48e72382488c1cb01d1132190, type: 3}
+  twinkleSound: {fileID: 8300000, guid: ad41f0f026b554efb8acdedcb9a7f074, type: 3}
 --- !u!251 &3048447323531577820
 PlatformEffector2D:
   m_ObjectHideFlags: 0
