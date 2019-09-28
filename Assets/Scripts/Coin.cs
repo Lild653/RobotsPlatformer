@@ -39,8 +39,6 @@ public class Coin : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
-
-        Debug.Log("bitchasssss");
         AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
         Instantiate(coinExplosion, transform.position, Quaternion.identity);
         ScoreTextScript.coinAmount += 1;
