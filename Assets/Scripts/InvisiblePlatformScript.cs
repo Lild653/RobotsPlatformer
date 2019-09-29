@@ -1,12 +1,10 @@
-﻿//Author: Rinn Joireman
-
+﻿//Author: Rinn
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinExplosion : MonoBehaviour
+public class InvisiblePlatformScript : MonoBehaviour
 {
-    
     public float framesPerSecond = 2;
     public Sprite[] frames;
 
@@ -14,7 +12,6 @@ public class CoinExplosion : MonoBehaviour
     private float frameTimer;
     private int currentFrameIndex = 0;
     // Start is called before the first frame update
-    
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -25,15 +22,12 @@ public class CoinExplosion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         // currentFrameIndex++;
         frameTimer -= Time.deltaTime;
         if(frameTimer <= 0){
             currentFrameIndex++;
+            frameTimer = (1f/framesPerSecond);
+            currentFrameIndex = currentFrameIndex%frames.Length;
             spriteRenderer.sprite = frames[currentFrameIndex];
-            frameTimer = (1f / framesPerSecond);
-        }
-        if(currentFrameIndex == frames.Length - 1){
-            Destroy(gameObject);
         }
     }
 }

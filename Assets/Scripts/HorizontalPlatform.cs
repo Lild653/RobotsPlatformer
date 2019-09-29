@@ -1,36 +1,35 @@
-﻿//Author: Rinn
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatformScript : MonoBehaviour
+public class HorizontalPlatform : MonoBehaviour
 {
-    // Start is called before the first frame update
+     // Start is called before the first frame update
     public float speed = 2;
-    public float maxDown = 2; 
-    public float maxUp = 2;
+    public float maxLeft = 0; 
+    public float maxRight = 2;
 
     private float changeSpeed;
     private Vector3 ogPos;
+
     void Start()
     {
         changeSpeed = speed;
         ogPos = transform.position;
-    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(ogPos[1] - transform.position[1] >= maxDown)
+        if(ogPos[0] - transform.position[0] >= maxLeft)
         {
             changeSpeed = -changeSpeed;
         }
-        else if(transform.position[1] -ogPos[1] >= maxUp)
+        else if(transform.position[0] -ogPos[0] >= maxRight)
         {
             changeSpeed = -changeSpeed;
         }
-        transform.position = transform.position + new Vector3(0, 1, 0) * changeSpeed * Time.deltaTime;
+        transform.position = transform.position + new Vector3(1, 0, 0) * changeSpeed * Time.deltaTime;
 
     }
 }
