@@ -1,10 +1,62 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     public float damage = 10f;
-    public float range = 100f;
+    private float range = 3f;
+    public float speed;
+    private Vector2 bulletTravel;
+    SpriteRenderer bulletSprite;
+
+
+    private void Start()
+    {
+        bulletSprite = GetComponent<SpriteRenderer>();
+        bulletTravel = transform.position;
+
+    }
+
+
+
+    void bulletDeath()
+    {
+
+        StartCoroutine(smokingGun());
+    }
+
+
+    IEnumerator smokingGun()
+    {
+
+        yield return new WaitForSeconds(1/5);
+        Destroy(gameObject);
+    }
+
+
+    private void Update()
+    {
+        transform.position += Vector3.left * speed * Time.deltaTime;
+        if(Mathf.Abs(transform.position.x+bulletTravel.x) >= range)
+        {
+            bulletDeath();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    
     public GameObject player;
     SpriteRenderer sr;
     SpriteRenderer enemy;
@@ -44,5 +96,6 @@ public class Bullet : MonoBehaviour
             //    target.TakeDamage(damage);
             //}
     }
+    */
 }
 
