@@ -788,7 +788,6 @@ GameObject:
   - component: {fileID: 691590152}
   - component: {fileID: 691590151}
   - component: {fileID: 691590154}
-  - component: {fileID: 691590155}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -870,33 +869,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 691590150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e537e363e0a964988f3c850e5f89e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a362b4670953c94abc74eafe579338c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  xMin: -10
-  xMax: 10
-  yMin: -10
-  yMax: 10
-  lerp: 1
-  minSpeed: 1
-  shakeTimeStandardStrong: 0.5
-  strengthStandardStrong: 0.5
-  shakeTimeStandardLight: 0.2
-  strengthStandardLight: 0.2
---- !u!114 &691590155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691590150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fcd9eceeb9754a20b5eb434fed74b3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadlevel: 
+  player: {fileID: 990409132}
+  offsetX: 5
+  offsetY: -3
 --- !u!1001 &765013442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1121,29 +1099,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1350770779}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &990409133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &990409132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4024741464853608, guid: a9e48ad772845c94b95626d3a3e0b25a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1350770779}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990409126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e537e363e0a964988f3c850e5f89e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  xMin: -10
-  xMax: 10
-  yMin: -10
-  yMax: 10
-  lerp: 1
-  minSpeed: 1
-  shakeTimeStandardStrong: 0.5
-  strengthStandardStrong: 0.5
-  shakeTimeStandardLight: 0.2
-  strengthStandardLight: 0.2
 --- !u!114 &990409134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,15 +2540,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7007373395525376900, guid: f4f0ae258f95d4c9d969dcc34954cdfc,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1766380021664298523, guid: f4f0ae258f95d4c9d969dcc34954cdfc,
         type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766380021664298523, guid: f4f0ae258f95d4c9d969dcc34954cdfc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007373395525376900, guid: f4f0ae258f95d4c9d969dcc34954cdfc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1766380021664298524, guid: f4f0ae258f95d4c9d969dcc34954cdfc,
         type: 3}
