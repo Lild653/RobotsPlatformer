@@ -19,7 +19,8 @@ public class PlayerInputModule2D : MonoBehaviour
 	void Start ()
 	{
 		controller = GetComponent<PlatformerController2D> ();
-	}
+        ScoreTextScript.coinAmount = 0;
+    }
 
 	void Update ()
 	{

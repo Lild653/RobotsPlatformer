@@ -14,6 +14,7 @@ public class ScoreTextScript : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
+        ScoreTextScript.coinAmount = 0;
     }
 
     // Update is called once per frame

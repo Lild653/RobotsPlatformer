@@ -22,5 +22,6 @@ public class SpikeScript : MonoBehaviour
     void OnCollisionEnter2D()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 }
