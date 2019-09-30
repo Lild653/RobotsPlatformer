@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rinn.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Alison.unity
+    guid: ac657b13bfb564e4db42bb2bcb7b871d
+  - enabled: 1
+    path: Assets/Scenes/Danny.unity
+    guid: 0c0eb459a95da4595800e20343905cfe
+  - enabled: 1
+    path: Assets/Scenes/Liya.unity
+    guid: 3cad7fe1fdc824d46af04adb9ee0e731
   m_configObjects: {}
