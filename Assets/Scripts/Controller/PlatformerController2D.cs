@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Script for general purpose 2D controls for any object that can move and jump when grounded.
@@ -18,6 +19,8 @@ public class PlatformerController2D : MonoBehaviour
     private bool _inputJump;
     public bool inputJump { set { if (value) { _inputJump = true; } } } // buffer jump input also from regular Update in _inputJump
     [HideInInspector] public bool IsGrounded { get { return grounded; } }
+
+	public GameObject deadPrefab;
 
 	[Tooltip ("Can this object move.")]
 	public bool canMove = true;
@@ -242,5 +245,16 @@ public class PlatformerController2D : MonoBehaviour
 				groundCheckStart += Vector2.right * (1.0f / (groundCheckRayCount - 1.0f)) * groundCheckWidth;
 			}
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision){
+		if(collision.collider.CompareTag("Spike")){
+			Die();
+        }
+	}
+	public void Die(){
+		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
+		//Destroy(gameObject);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }

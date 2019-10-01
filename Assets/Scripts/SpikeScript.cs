@@ -19,9 +19,10 @@ public class SpikeScript : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
-    }
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if(collision.collider.CompareTag("Player")){
+    //         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //     }
+    // }
 }
