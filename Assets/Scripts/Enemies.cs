@@ -10,10 +10,12 @@ public class Enemies : MonoBehaviour
 
     public float health = 50f; // can be changed
     public Rigidbody2D rb2d;
-    public float speed;
+    public float speed = 2;
     public GameObject bullet;
     public float rateofFire;
     private float lastShot = 0;
+    private float defaultSpeed = 2;
+
 
     public void TakeDamage(float amount)
     {
@@ -30,10 +32,10 @@ public class Enemies : MonoBehaviour
 
 
 
-    void playerTracker()
+    public Boolean playerTracker()
     {
-        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 5f);
-        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 5f);
+        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 3f);
+        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 3f);
 
 
         //sprite.flipX = true;
@@ -44,8 +46,9 @@ public class Enemies : MonoBehaviour
             {
                 lastShot = Time.time;
                 Instantiate(bullet, transform.position, Quaternion.identity);
+                
             }
-
+            return true;
         }
 
 
@@ -55,8 +58,13 @@ public class Enemies : MonoBehaviour
             {
                 lastShot = Time.time;
                 Instantiate(bullet, transform.position, Quaternion.identity);
+                
+
             }
+            return true;
         }
+
+        return false;
         
         
 
@@ -101,14 +109,24 @@ public class Enemies : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-    }
+        
+        
+}
 
 
 
     void Update()
 
     {
-        playerTracker();
+        if (playerTracker())
+        {
+            speed =0;
+        }
+        else
+        {
+            speed = defaultSpeed;
+        }
+
 
         if (canMoveForward() == true)
         {
