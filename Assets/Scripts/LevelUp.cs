@@ -7,9 +7,8 @@ public class LevelUp : MonoBehaviour
 {
     public string loadlevel;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        print('h');
         if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene(loadlevel);

@@ -11,6 +11,7 @@ using UnityEngine;
 /// <summary>
 /// Module for player controller input when using a PlatformController2D. Uses standart Horizontal and Vertical input axis as well as Jump button.
 /// </summary>
+
 [RequireComponent (typeof(PlatformerController2D))]
 public class PlayerInputModule2D : MonoBehaviour
 {

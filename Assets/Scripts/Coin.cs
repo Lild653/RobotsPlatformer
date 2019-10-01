@@ -41,7 +41,8 @@ public class Coin : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
         Instantiate(coinExplosion, transform.position, Quaternion.identity);
-        ScoreTextScript.coinAmount += 1;
         Destroy(gameObject);
+        ScoreTextScript.coinAmount += 1;
+        
     }
 }

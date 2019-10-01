@@ -7,13 +7,14 @@ public class CameraController : MonoBehaviour
     public Transform player;
     public float offsetX;
     public float offsetY;
+    public bool moveY;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         Vector3 pos = transform.position;
@@ -27,15 +28,20 @@ public class CameraController : MonoBehaviour
             pos.x = player.position.x + offsetX;
             transform.position = pos;
         }
-        if(player.position.y < (pos.y - offsetY))
+
+        if (moveY == true)
         {
-            pos.y = player.position.y - offsetY;
-            transform.position = pos;
-        }
-        else if (player.position.y > (pos.y - offsetY))
-        {
-            pos.y = player.position.y + offsetY;
-            transform.position = pos;
+            if (player.position.y < (pos.y - offsetY))
+            {
+                pos.y = player.position.y - offsetY;
+                transform.position = pos;
+            }
+            else if (player.position.y > (pos.y - offsetY))
+            {
+                pos.y = player.position.y + offsetY;
+                transform.position = pos;
+            }
         }
     }
+
 }
