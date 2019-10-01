@@ -116,5 +116,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTimer: 10
-  upBounceForce: 5
+  upBounceForce: 10
   gravity: 40

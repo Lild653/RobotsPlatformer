@@ -59,6 +59,8 @@ public class PlatformerController2D : MonoBehaviour
     [Tooltip("Animation Frames (Sprites) to be played back while not grounded (jumping or falling).")]
     public Sprite[] airFrames;
 
+	public float destroyTimer = 1;
+
 	SpriteRenderer sr = null;
     int currentFrame = 0;
     float animationTimer = 0;
@@ -249,12 +251,15 @@ public class PlatformerController2D : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.collider.CompareTag("Spike")){
-			Die();
+			StartCoroutine(Die());
         }
 	}
-	public void Die(){
+	public IEnumerator Die(){
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		transform.position = transform.position + new Vector3(0,0,5);
+		yield return new WaitForSeconds (destroyTimer);
+		Destroy(gameObject);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 	}
 }

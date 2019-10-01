@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody2D))]
 public class DeadPlayer : MonoBehaviour {
 
-	public float destroyTimer = 10;
+	public float destroyTimer = 3;
 	public float upBounceForce = 5;
 	public float gravity = 40;
 
