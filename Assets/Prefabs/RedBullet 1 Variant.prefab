@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3615013658341966244
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1343294511066150243, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_Name
+      value: RedBullet 1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343294511066150243, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemyBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9605923
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.1983194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904507141529545888, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101508522423521810, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: redBullets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: bulletAnim.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: redBullets.Array.data[0]
+      value: 
+      objectReference: {fileID: 3683041795401805016, guid: afdf7eb2d094a452bb541c9ce7dd9420,
+        type: 3}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: redBullets.Array.data[1]
+      value: 
+      objectReference: {fileID: 1089072599601905560, guid: afdf7eb2d094a452bb541c9ce7dd9420,
+        type: 3}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: redBullets.Array.data[2]
+      value: 
+      objectReference: {fileID: -3060781799380547165, guid: afdf7eb2d094a452bb541c9ce7dd9420,
+        type: 3}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: bulletAnim.Array.data[0]
+      value: 
+      objectReference: {fileID: 3683041795401805016, guid: afdf7eb2d094a452bb541c9ce7dd9420,
+        type: 3}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: bulletAnim.Array.data[1]
+      value: 
+      objectReference: {fileID: 1089072599601905560, guid: afdf7eb2d094a452bb541c9ce7dd9420,
+        type: 3}
+    - target: {fileID: 382008494072807303, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: bulletAnim.Array.data[2]
+      value: 
+      objectReference: {fileID: -3060781799380547165, guid: afdf7eb2d094a452bb541c9ce7dd9420,
+        type: 3}
+    - target: {fileID: 382008494072807296, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.44919476
+      objectReference: {fileID: 0}
+    - target: {fileID: 382008494072807296, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.35721013
+      objectReference: {fileID: 0}
+    - target: {fileID: 382008494072807296, guid: 9e6b24d360e2843188f7fbb6bae87036,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e6b24d360e2843188f7fbb6bae87036, type: 3}

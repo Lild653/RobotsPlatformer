@@ -20,11 +20,13 @@ public class PlayerInputModule2D : MonoBehaviour
     private float rateOfFire = 1;
     public GameObject bullet;
     public Sprite[] shooting;
+    public SpriteRenderer bulletSprite;
 
 	void Start ()
 	{
 		controller = GetComponent<PlatformerController2D> ();
         ScoreTextScript.coinAmount = 0;
+        bulletSprite = bullet.GetComponent<SpriteRenderer>();
     }
 
 
@@ -36,6 +38,14 @@ public class PlayerInputModule2D : MonoBehaviour
             if((lastShot + 1 / rateOfFire) < Time.time){
                 // StartCoroutine(shootingAnimation());
                 //lastShot = Time.time;
+                if (GetComponent<PlatformerController2D>().sr.flipX)
+                {
+                    bulletSprite.flipX = true;
+                }
+                else
+                {
+                    bulletSprite.flipX = false;
+                }
                 Instantiate(bullet, transform.position, Quaternion.identity);
             }
         }

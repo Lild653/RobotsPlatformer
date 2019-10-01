@@ -13,14 +13,23 @@ public class Enemies : MonoBehaviour
     public float speed = 2;
     public GameObject bullet;
     public float rateofFire;
-    private float lastShot= 0;
-    private float defaultSpeed = 0;
+    private float lastShot = 0;
+    private float defaultSpeed = 2;
     private Boolean correctCollider;
+    public float animationTimer = 0;
+    private int currentFrame = 0;
+    public float animationFPS = 5;
+    public Sprite[] movement;
+    public Sprite shootStance;
+    public Sprite[] deadBitch;
+    public Sprite[] hurtBitch;
+    private SpriteRenderer bulletSprite;
 
 
     public void TakeDamage(float amount)
     {
         health -= amount;
+        StartCoroutine(hurtassBitch());
         if (health <= 0f)
         {
             Die();
@@ -28,29 +37,65 @@ public class Enemies : MonoBehaviour
     }
     void Die()
     {
+        StartCoroutine(deadassBitch());
+        
+    }
+
+    IEnumerator deadassBitch()
+    {
+        for(int i = 0; i < deadBitch.Length; i++)
+        {
+            sprite.sprite = deadBitch[i];
+            yield return new WaitForSeconds(1);
+        }
         Destroy(gameObject);
     }
+    IEnumerator hurtassBitch()
+    {
+        for (int i = 0; i < hurtBitch.Length; i++)
+        {
+            sprite.sprite = hurtBitch[i];
+            yield return new WaitForSeconds(1 / 5);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerBullet"))
+        {
+            TakeDamage(10);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+
 
 
 
     public Boolean playerTracker()
     {
-        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left,10f,8);
-        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right,10f,8);
-
-
+        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 3f);
+        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 3f);
         
+
+
 
         if (left.collider)
         {
             if (left.collider.CompareTag("Player"))
             {
+                sprite.flipX = true;
                 if ((lastShot + 1 / rateofFire) < Time.time)
                 {
                     lastShot = Time.time;
+                    bulletSprite.flipX = true;
                     Instantiate(bullet, transform.position, Quaternion.identity);
 
                 }
+             
                 return true;
             }
 
@@ -62,13 +107,16 @@ public class Enemies : MonoBehaviour
         {
             if (right.collider.CompareTag("Player"))
             {
+                sprite.flipX = false;
                 if ((lastShot + 1 / rateofFire) < Time.time)
                 {
                     lastShot = Time.time;
+                    bulletSprite.flipX = false;
                     Instantiate(bullet, transform.position, Quaternion.identity);
 
 
                 }
+                
                 return true;
             }
         }
@@ -78,16 +126,24 @@ public class Enemies : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+ 
+
+
+
+    public void PlayBackAnimation(Sprite[] anim)
     {
-        if (collision.collider.CompareTag("Enemy"))
+        animationTimer -= Time.deltaTime;
+        if (animationTimer <= 0 && anim.Length > 0)
         {
-            correctCollider=false;
+            animationTimer = 1f / animationFPS;
+            currentFrame++;
+            if (currentFrame >= anim.Length)
+            {
+                currentFrame = 0;
+            }
+            sprite.sprite = anim[currentFrame];
         }
-        correctCollider= true;
     }
-
-
     public Boolean canMoveForward()
     {
         //Have to play around with this implenmentation in order to get the correct angle.
@@ -107,7 +163,7 @@ public class Enemies : MonoBehaviour
         }
 
 
-        RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection);
+        RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 3f);
         if (forward.collider == null)
         {
             return false;
@@ -123,9 +179,16 @@ public class Enemies : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        bulletSprite = bullet.GetComponent<SpriteRenderer>();
         
         
 }
+
+    IEnumerator waiting()
+    {
+        sprite.sprite = shootStance;
+        yield return new WaitForSeconds(1);
+    }
 
 
 
@@ -135,15 +198,13 @@ public class Enemies : MonoBehaviour
         if (playerTracker())
         {
             speed =0;
+            
+            StartCoroutine(waiting());
         }
-        else
+        else if ((canMoveForward() == true))
         {
             speed = defaultSpeed;
-        }
-
-
-        if (canMoveForward() == true)
-        {
+            PlayBackAnimation(movement);
             switch (sprite.flipX)
             {
                 case false:
@@ -157,9 +218,6 @@ public class Enemies : MonoBehaviour
 
             }
 
-
-
-
         }
         else if (sprite.flipX == false)
         {
@@ -171,6 +229,7 @@ public class Enemies : MonoBehaviour
         }
     }
 }
+
 
 
 

@@ -9,6 +9,10 @@ public class Bullet : MonoBehaviour
     public float speed;
     private Vector2 bulletTravel;
     SpriteRenderer bulletSprite;
+    public string bulletDirection;
+    public string bulletType;
+    public Sprite[] bulletAnim;
+    
 
 
     private void Start()
@@ -20,28 +24,59 @@ public class Bullet : MonoBehaviour
 
 
 
-    void bulletDeath()
-    {
-
-        StartCoroutine(smokingGun());
-    }
+    
 
 
     IEnumerator smokingGun()
     {
-
-        yield return new WaitForSeconds(1/5);
+        for(int i = 0; i < bulletAnim.Length; i++)
+            {
+                bulletSprite.sprite = bulletAnim[i];
+                yield return new WaitForSeconds(1/20f);
+            }
+        
         Destroy(gameObject);
     }
 
+    
+
+    void bulletPath()
+    {
+        if (bulletSprite.flipX)
+        {
+            bulletDirection = "left";
+        }
+        else
+        {
+            bulletDirection = "right";
+        }
+    }
 
     private void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
-        if(Mathf.Abs(transform.position.x-bulletTravel.x) >= range)
+
+
+        bulletPath();
+        switch (bulletDirection)
         {
-            bulletDeath();
+            case "left":
+                transform.position += Vector3.left * speed * Time.deltaTime;
+                if (Mathf.Abs(transform.position.x - bulletTravel.x) >= range)
+                {
+                    StartCoroutine(smokingGun());
+                }
+                break;
+            case "right":
+                transform.position += Vector3.right * speed * Time.deltaTime;
+                if (Mathf.Abs(bulletTravel.x - transform.position.x) >= range)
+                {
+                    StartCoroutine(smokingGun());
+                }
+                break;
+
         }
+        
+        
     }
 
 

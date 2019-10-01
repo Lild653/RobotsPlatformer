@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5244907708145920010, guid: 1e25e047632d243e1bbe892e801f5077,
         type: 3}
       propertyPath: m_Name
-      value: bulletright Variant
+      value: bulletright Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2008224421238959496, guid: 1e25e047632d243e1bbe892e801f5077,
         type: 3}
@@ -76,6 +76,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 0.46709692
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459680493089240106, guid: 1e25e047632d243e1bbe892e801f5077,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e25e047632d243e1bbe892e801f5077, type: 3}
