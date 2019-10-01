@@ -254,7 +254,7 @@ public class PlatformerController2D : MonoBehaviour
 	}
 	public void Die(){
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
-		//Destroy(gameObject);
+		transform.position = transform.position + new Vector3(0,0,5);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }
