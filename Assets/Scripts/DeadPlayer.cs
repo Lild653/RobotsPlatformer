@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//this code was added to be attached to the dead player prefab
+//it is instantiated when the player collides with the spikes and causes the sprite to bounce up
+//then fall off the screen.
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
