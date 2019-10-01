@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
-        if(Mathf.Abs(transform.position.x+bulletTravel.x) >= range)
+        if(Mathf.Abs(transform.position.x-bulletTravel.x) >= range)
         {
             bulletDeath();
         }

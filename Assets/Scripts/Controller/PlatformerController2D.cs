@@ -164,7 +164,7 @@ public class PlatformerController2D : MonoBehaviour
         }
 	}
 
-    void PlayBackAnimation(Sprite[] anim)
+     public void PlayBackAnimation(Sprite[] anim)
     {
         animationTimer -= Time.deltaTime;
         if (animationTimer <= 0 && anim.Length > 0)
