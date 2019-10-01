@@ -29,7 +29,7 @@ public class Enemies : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        StartCoroutine(hurtassBitch());
+        
         if (health <= 0f)
         {
             Die();
@@ -37,27 +37,10 @@ public class Enemies : MonoBehaviour
     }
     void Die()
     {
-        StartCoroutine(deadassBitch());
-        
-    }
-
-    IEnumerator deadassBitch()
-    {
-        for(int i = 0; i < deadBitch.Length; i++)
-        {
-            sprite.sprite = deadBitch[i];
-            yield return new WaitForSeconds(1);
-        }
         Destroy(gameObject);
     }
-    IEnumerator hurtassBitch()
-    {
-        for (int i = 0; i < hurtBitch.Length; i++)
-        {
-            sprite.sprite = hurtBitch[i];
-            yield return new WaitForSeconds(1 / 5);
-        }
-    }
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
