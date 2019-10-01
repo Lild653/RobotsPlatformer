@@ -44,6 +44,7 @@ public class PlayerInputModule2D : MonoBehaviour
 
     
 
+
     IEnumerator shootingAnimation()
     {
 

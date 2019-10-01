@@ -13,8 +13,9 @@ public class Enemies : MonoBehaviour
     public float speed = 2;
     public GameObject bullet;
     public float rateofFire;
-    private float lastShot = 0;
-    private float defaultSpeed = 2;
+    private float lastShot= 0;
+    private float defaultSpeed = 0;
+    private Boolean correctCollider;
 
 
     public void TakeDamage(float amount)
@@ -34,43 +35,56 @@ public class Enemies : MonoBehaviour
 
     public Boolean playerTracker()
     {
-        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 3f);
-        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 3f);
+        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left,10f,8);
+        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right,10f,8);
 
 
-        //sprite.flipX = true;
+        
 
         if (left.collider)
         {
-            if (left.collider.CompareTag("Player") && (lastShot + 1 / rateofFire) < Time.time)
+            if (left.collider.CompareTag("Player"))
             {
-                lastShot = Time.time;
-                Instantiate(bullet, transform.position, Quaternion.identity);
-                
+                if ((lastShot + 1 / rateofFire) < Time.time)
+                {
+                    lastShot = Time.time;
+                    Instantiate(bullet, transform.position, Quaternion.identity);
+
+                }
+                return true;
             }
-            return true;
+
         }
+
 
 
         if (right.collider)
         {
-            if (right.collider != null && (lastShot + 1 / rateofFire) < Time.time)
+            if (right.collider.CompareTag("Player"))
             {
-                lastShot = Time.time;
-                Instantiate(bullet, transform.position, Quaternion.identity);
-                
+                if ((lastShot + 1 / rateofFire) < Time.time)
+                {
+                    lastShot = Time.time;
+                    Instantiate(bullet, transform.position, Quaternion.identity);
 
+
+                }
+                return true;
             }
-            return true;
         }
 
         return false;
         
-        
 
+    }
 
-
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            correctCollider=false;
+        }
+        correctCollider= true;
     }
 
 
