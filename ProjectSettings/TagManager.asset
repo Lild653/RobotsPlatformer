@@ -9,6 +9,8 @@ TagManager:
   - Platform
   - Spike
   - VerticalPlatform
+  - InvisiblePlatform
+  - portal
   layers:
   - Default
   - TransparentFX
