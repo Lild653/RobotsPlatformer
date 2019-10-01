@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Authors: Rinn and Liya
+//This script contains implementation for the movement of the camera during game play
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +19,7 @@ public class CameraController : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        //The camera should always follow the player in the x direction
         Vector3 pos = transform.position;
         if (player.position.x > (pos.x - offsetX))
         {
@@ -28,7 +31,8 @@ public class CameraController : MonoBehaviour
             pos.x = player.position.x + offsetX;
             transform.position = pos;
         }
-
+        //If a scene needs the camera to move in the Y direction, we can check moveY as true and the
+        //camera will also change based on the players Y direction
         if (moveY == true)
         {
             if (player.position.y < (pos.y - offsetY))

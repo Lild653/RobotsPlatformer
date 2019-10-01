@@ -1,4 +1,7 @@
-﻿//Author: Rinn
+﻿//Author: Rinn Joireman
+//File that contains the implementation for the invisible platform.
+//This platform is essentially just a looped sprite flipbook with a square collider attached to it
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +25,7 @@ public class InvisiblePlatformScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Animation: twinkling star animations are looped indefinitely 
         frameTimer -= Time.deltaTime;
         if(frameTimer <= 0){
             currentFrameIndex++;

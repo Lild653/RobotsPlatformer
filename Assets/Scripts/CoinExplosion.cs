@@ -1,5 +1,6 @@
 ﻿//Author: Rinn Joireman
-
+//This file contains the script for the prefab that is instantiated when the player collides
+//with a coin
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,7 +26,7 @@ public class CoinExplosion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         // currentFrameIndex++;
+        //Animation for coin explosion: runs through one full cycle of sprites then destroys itself
         frameTimer -= Time.deltaTime;
         if(frameTimer <= 0){
             currentFrameIndex++;

@@ -1,5 +1,5 @@
 ﻿//Author: Rinn Joireman
-
+//This script contains implementation for the coin prefab
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +28,8 @@ public class Coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Animation: the animation for the spinning coin is a flipbook that should run endlessly 
+        //until the object is removed from the game
         frameTimer -= Time.deltaTime;
         if(frameTimer <= 0){
             currentFrameIndex++;
@@ -39,6 +41,8 @@ public class Coin : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
+        //when the player collides with the coin, a sound will be played and the coin explosion prefab will 
+        //be instantiated. Then the game object is destroyed and the coin count is incremented.
         AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
         Instantiate(coinExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);

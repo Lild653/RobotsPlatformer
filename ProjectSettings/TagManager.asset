@@ -11,6 +11,7 @@ TagManager:
   - VerticalPlatform
   - InvisiblePlatform
   - portal
+  - DeadPlayer
   layers:
   - Default
   - TransparentFX
