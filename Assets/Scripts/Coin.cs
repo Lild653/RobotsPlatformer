@@ -56,6 +56,10 @@ public class Coin : MonoBehaviour
             Destroy(gameObject);
             ScoreTextScript.coinAmount += 1;
         }
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
         
     }
 }
