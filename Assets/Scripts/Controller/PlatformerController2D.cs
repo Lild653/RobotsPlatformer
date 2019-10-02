@@ -66,7 +66,7 @@ public class PlatformerController2D : MonoBehaviour
 
 	public float destroyTimer = 1;
 
-	public SpriteRenderer sr = null;
+	private SpriteRenderer sr = null;
     int currentFrame = 0;
     float animationTimer = 0;
 
@@ -267,7 +267,12 @@ public class PlatformerController2D : MonoBehaviour
 			GameObject spinPlayer = Instantiate<GameObject> (spinPrefab, transform.position, Quaternion.identity);
 		}
 	}
-	public IEnumerator Die(){
+    public void BulletTrigger()
+    {
+        print("i got here");
+        StartCoroutine(Die());
+    }
+    public IEnumerator Die(){
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		transform.position = transform.position + new Vector3(0,0,5);
 		sr.sprite = invisible;

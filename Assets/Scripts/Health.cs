@@ -18,29 +18,23 @@ public class Health : MonoBehaviour
         currentscene = SceneManager.GetActiveScene();
     }
     public void HealthChange()
-    { 
-        
+    {
+
         if (CurrentHealth <= 3)
         {
             //change bar
             CurrentHealth = CurrentHealth - 1f;
-            healthbar.value = CalculateHealth();
+            healthbar.value = CurrentHealth;
 
 
         }
         if (CurrentHealth < 1f)
-        { 
-            Destroy(gameObject);
-            SceneManager.LoadScene(currentscene.name);
+        {
+            GetComponent<PlatformerController2D>().BulletTrigger();
         }
-        
+
 
     }
-    float CalculateHealth()
-    {
-        return CurrentHealth;
-    }
-
     // Update is called once per frame
     void Update()
     {
