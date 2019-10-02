@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3462377530032478842}
   - component: {fileID: -7692672590402164376}
   - component: {fileID: 1515543943}
+  - component: {fileID: 2152471918128417892}
   m_Layer: 2
   m_Name: Idle (1)
   m_TagString: Player
@@ -135,6 +136,7 @@ MonoBehaviour:
   input: {x: 0, y: 0}
   deadPrefab: {fileID: 3554601277122969105, guid: b31953fb5640fdb4f9b991191c372458,
     type: 3}
+  invisible: {fileID: 0}
   canMove: 1
   speed: 5
   jumpVelocity: 15
@@ -182,6 +184,22 @@ MonoBehaviour:
   destroyTimer: 1
   sr: {fileID: 0}
 --- !u!70 &1515543943
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735529528011116458}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a288156d602c12f4692f068183a64144, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.28, y: 4.63}
+  m_Direction: 0
+--- !u!70 &2152471918128417892
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
