@@ -23,10 +23,8 @@ public class Health : MonoBehaviour
         if (CurrentHealth <= 3)
         {
             //change bar
-            print(CurrentHealth);
             CurrentHealth = CurrentHealth - 1f;
             healthbar.value = CalculateHealth();
-            print(healthbar.value);
 
 
         }
