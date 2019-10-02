@@ -47,6 +47,7 @@ public class Enemies : MonoBehaviour
         if (collision.CompareTag("PlayerBullet"))
         {
             TakeDamage(10);
+            Destroy(collision.gameObject);
         }
         else
         {
