@@ -16,7 +16,8 @@ public class DeadPlayer : MonoBehaviour {
 	Rigidbody2D rb2d;
 
 	void Start () {
-		rb2d = GetComponent<Rigidbody2D> ();
+        ScoreTextScript.coinAmount = 0;
+        rb2d = GetComponent<Rigidbody2D> ();
 		StartCoroutine (DestroyRoutine ());
 		rb2d.velocity = new Vector2 (0, upBounceForce);
 	}
@@ -30,7 +31,7 @@ public class DeadPlayer : MonoBehaviour {
 	IEnumerator DestroyRoutine(){
 		yield return new WaitForSeconds (destroyTimer);
 		Destroy (gameObject);
-        ScoreTextScript.coinAmount = 0;
+        
 
     }
 
