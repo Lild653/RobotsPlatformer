@@ -39,14 +39,22 @@ public class Coin : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
+//Updated upstream
         //when the player collides with the coin, a sound will be played and the coin explosion prefab will 
         //be instantiated. Then the game object is destroyed and the coin count is incremented.
-        AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
-        Instantiate(coinExplosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        ScoreTextScript.coinAmount += 1;
+        
+        if(other.CompareTag("Player")){
+            AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
+            Instantiate(coinExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            ScoreTextScript.coinAmount += 1;
+        }
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
         
     }
 }

@@ -258,6 +258,7 @@ public class PlatformerController2D : MonoBehaviour
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		transform.position = transform.position + new Vector3(0,0,5);
 		yield return new WaitForSeconds (destroyTimer);
+		//GameObject.SetActive = false;
 		Destroy(gameObject);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

@@ -30,6 +30,8 @@ public class DeadPlayer : MonoBehaviour {
 	IEnumerator DestroyRoutine(){
 		yield return new WaitForSeconds (destroyTimer);
 		Destroy (gameObject);
-	}
+        ScoreTextScript.coinAmount = 0;
+
+    }
 
 }
