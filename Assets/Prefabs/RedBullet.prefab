@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3554849868158945106}
   - component: {fileID: 4759047278159030310}
   - component: {fileID: -8151369022799470490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RedBullet
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /// <summary>
 /// Module for player controller input when using a PlatformController2D. Uses standart Horizontal and Vertical input axis as well as Jump button.
 /// </summary>
@@ -21,13 +22,14 @@ public class PlayerInputModule2D : MonoBehaviour
     public GameObject bullet;
     public Sprite[] shooting;
     public SpriteRenderer bulletSprite;
-
+    public int lives = 3;
 	void Start ()
 	{
 		controller = GetComponent<PlatformerController2D> ();
 //Updated upstream
         //ScoreTextScript.coinAmount = 0;
         bulletSprite = bullet.GetComponent<SpriteRenderer>();
+        
 //
 //Stashed changes
     }
@@ -53,6 +55,19 @@ public class PlayerInputModule2D : MonoBehaviour
             }
         }
 
+    }
+    
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.CompareTag("EnemyBullet")){
+            GetComponent<Health>().HealthChange();
+            Destroy(other.gameObject);
+        }
+        else
+        {
+            return;
+        }
+           
+        
     }
 
     
