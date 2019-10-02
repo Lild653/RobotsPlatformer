@@ -22,6 +22,8 @@ public class PlatformerController2D : MonoBehaviour
 
 	public GameObject deadPrefab;
 
+	public GameObject spinPrefab;
+
 	public Sprite invisible;
 
 
@@ -257,10 +259,18 @@ public class PlatformerController2D : MonoBehaviour
 			StartCoroutine(Die());
         }
 	}
+
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.CompareTag("Portal")){
+			sr.sprite = invisible;
+			gameObject.SetActive(false);
+			GameObject spinPlayer = Instantiate<GameObject> (spinPrefab, transform.position, Quaternion.identity);
+		}
+	}
 	public IEnumerator Die(){
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
 		transform.position = transform.position + new Vector3(0,0,5);
-		
+		sr.sprite = invisible;
 		yield return new WaitForSeconds (destroyTimer);
 		gameObject.SetActive(false);
 		Destroy(gameObject);
