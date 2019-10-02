@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21812214915d346488dcd6fa99a52eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7644311588833020049, guid: 00654e3ade9f247d38497764b80fe24f, type: 3}
+  bullet: {fileID: 1611410900994922338, guid: 2e879e267c0ce45a09819ffda0273b26, type: 3}
   shooting:
   - {fileID: 21300000, guid: 5ad67b8254a98460794c5d44675f5244, type: 3}
   - {fileID: 21300000, guid: 8ad2ab194adad4905b93b38c1fb09b6f, type: 3}
@@ -107,6 +107,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 76fc6e5d369734c218f0f47087aff224, type: 3}
   - {fileID: 21300000, guid: cd5ea400d305549afa21819e9982cc1a, type: 3}
   - {fileID: 21300000, guid: 7cc0ee512254e4d5d8333f20a30f593b, type: 3}
+  bulletSprite: {fileID: 0}
 --- !u!50 &2747314702681338593
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +124,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a288156d602c12f4692f068183a64144, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: {x: 0, y: 0}
+  deadPrefab: {fileID: 0}
   canMove: 1
   speed: 5
   jumpVelocity: 15
@@ -185,6 +187,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4a8b1f88e16814eacad4d43d2a01e743, type: 3}
   - {fileID: 21300000, guid: c6139babca9864dd0b5fab9602bc17a3, type: 3}
   - {fileID: 21300000, guid: 19550172520164b42b6203480c5340d8, type: 3}
+  destroyTimer: 1
+  sr: {fileID: 0}
 --- !u!70 &1597856676097173552
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
