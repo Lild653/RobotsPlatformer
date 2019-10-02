@@ -50,10 +50,12 @@ public class Coin : MonoBehaviour
         //    return;
         //}
 //Stashed changes
-        AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
-        Instantiate(coinExplosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        ScoreTextScript.coinAmount += 1;
+        if(other.CompareTag("Player")){
+            AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
+            Instantiate(coinExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            ScoreTextScript.coinAmount += 1;
+        }
         
     }
 }
