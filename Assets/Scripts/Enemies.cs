@@ -152,11 +152,12 @@ public class Enemies : MonoBehaviour
 
         RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 3f);
 
-        if (forward.collider == null)
+        if (forward.collider == null || forward.collider.CompareTag("Spike"))
         {
             
             return false;
         }
+       
         else if (frontDirection.collider ==null)
         {
 
