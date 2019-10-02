@@ -8,13 +8,13 @@ using UnityEngine.UI;
 public class ScoreTextScript : MonoBehaviour
 {
     Text text;
-    public static int coinAmount;
+    public static int coinAmount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<Text>();
-        ScoreTextScript.coinAmount = 0;
+        //ScoreTextScript.coinAmount = 0;
     }
 
     // Update is called once per frame

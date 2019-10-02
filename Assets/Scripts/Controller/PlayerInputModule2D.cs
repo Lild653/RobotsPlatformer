@@ -25,8 +25,11 @@ public class PlayerInputModule2D : MonoBehaviour
 	void Start ()
 	{
 		controller = GetComponent<PlatformerController2D> ();
-        ScoreTextScript.coinAmount = 0;
+//Updated upstream
+        //ScoreTextScript.coinAmount = 0;
         bulletSprite = bullet.GetComponent<SpriteRenderer>();
+//
+//Stashed changes
     }
 
 
