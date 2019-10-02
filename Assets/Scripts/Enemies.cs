@@ -137,25 +137,39 @@ public class Enemies : MonoBehaviour
         //use -1,-1 to get the vecotr going at the angle that I wanted. It worked. Now i had to edit my function to get the enemey to flip directions
 
         Vector2 currentDirection;
+        RaycastHit2D frontDirection;
+        Vector2 right = new Vector2(1, 0.5f);
         if (sprite.flipX == false)
         {
             currentDirection = new Vector2(1, -1);
+            frontDirection = Physics2D.Raycast(transform.position, Vector2.right, 0.5f);
         }
         else
         {
             currentDirection = new Vector2(-1, -1);
+            frontDirection = Physics2D.Raycast(transform.position, Vector2.left, 0.5f);
         }
-
 
         RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 3f);
+
         if (forward.collider == null)
         {
+            
             return false;
-
         }
+        else if (frontDirection.collider ==null)
+        {
 
-
-        return true;
+            return true;
+        }
+        else if (frontDirection.collider.CompareTag("Player"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     //Shoot raycast at 45 degree angle to check if enemy can still move forward without falling off of platform
