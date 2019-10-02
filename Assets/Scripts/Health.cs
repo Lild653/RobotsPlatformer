@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     {
         MaxHealth = 3f;
         CurrentHealth = MaxHealth;
+        healthbar.value = CurrentHealth;
         currentscene = SceneManager.GetActiveScene();
     }
     public void HealthChange()
