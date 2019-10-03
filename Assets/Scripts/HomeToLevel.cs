@@ -12,6 +12,11 @@ public class HomeToLevel : MonoBehaviour
 
     public void GotoMenuScene()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("Home");
+    }
+
+    public void GotoInstructionsScene()
+    {
+        SceneManager.LoadScene("Instructions");
     }
 }
