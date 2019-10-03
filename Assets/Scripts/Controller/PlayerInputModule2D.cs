@@ -56,7 +56,8 @@ public class PlayerInputModule2D : MonoBehaviour
         }
 
     }
-    
+    //this function checks to see if the player has been hit with the enemy bullet, and if so, it calls the Health script
+    //which deals with the health bar functionality and destroys the bullet afterward.
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("EnemyBullet")){
             GetComponent<Health>().HealthChange();
