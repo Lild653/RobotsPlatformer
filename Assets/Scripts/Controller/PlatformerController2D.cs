@@ -66,7 +66,7 @@ public class PlatformerController2D : MonoBehaviour
 
 	public float destroyTimer = 1;
 
-	private SpriteRenderer sr = null;
+	public SpriteRenderer sr = null;
     int currentFrame = 0;
     float animationTimer = 0;
 
