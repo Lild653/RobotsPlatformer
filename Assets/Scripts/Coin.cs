@@ -41,7 +41,7 @@ public class Coin : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-//Updated upstream
+        //Updated upstream
         //when the player collides with the coin, a sound will be played and the coin explosion prefab will 
         //be instantiated. Then the game object is destroyed and the coin count is incremented.
         
