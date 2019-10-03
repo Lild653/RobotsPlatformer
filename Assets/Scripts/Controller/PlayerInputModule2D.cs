@@ -22,16 +22,18 @@ public class PlayerInputModule2D : MonoBehaviour
     public GameObject bullet;
     public Sprite[] shooting;
     public SpriteRenderer bulletSprite;
+    public SpriteRenderer spr;
     public int lives = 3;
 	void Start ()
 	{
 		controller = GetComponent<PlatformerController2D> ();
-//Updated upstream
+        spr = GetComponent<SpriteRenderer>();
+        //Updated upstream
         //ScoreTextScript.coinAmount = 0;
         bulletSprite = bullet.GetComponent<SpriteRenderer>();
         
-//
-//Stashed changes
+        //
+        //Stashed changes
     }
 
 
@@ -62,6 +64,11 @@ public class PlayerInputModule2D : MonoBehaviour
         if (other.CompareTag("EnemyBullet")){
             GetComponent<Health>().HealthChange();
             Destroy(other.gameObject);
+            for(int i = 0; i < 5; i++ )
+            {
+                spr.material.color = Color.red;
+                spr.material.color = Color.white;                
+            }
         }
         else
         {
@@ -70,9 +77,6 @@ public class PlayerInputModule2D : MonoBehaviour
            
         
     }
-
-    
-
 
     IEnumerator shootingAnimation()
     {
