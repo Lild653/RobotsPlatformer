@@ -276,7 +276,11 @@ public class PlatformerController2D : MonoBehaviour
     }
     public IEnumerator Die(){
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
+//Updated upstream
 		transform.position = transform.position + new Vector3(0,0,moveInt);
+//
+		transform.position = transform.position + new Vector3(0,0,-10);
+//Stashed changes
 		yield return new WaitForSeconds (destroyTimer);
 		gameObject.SetActive(false);
 		Destroy(gameObject);
