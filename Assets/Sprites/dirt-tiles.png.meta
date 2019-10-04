@@ -1,34 +1,19 @@
 fileFormatVersion: 2
-guid: a0bdca244fbd94d89a59f541839d0928
+guid: bc7ec09a5bce3420bab2a5a9ec839d12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3292684594807189452
-    second: intbuilding7a_0
+      213: 8667798015380430119
+    second: Space dirt_1
   - first:
-      213: -6598422034451717792
-    second: intbuilding7a_1
+      213: 1895539317081381922
+    second: Spacedirt_2
   - first:
-      213: -2230159066450154401
-    second: intbuilding7a_2
+      213: -4778238843874195431
+    second: Spacedirt_3
   - first:
-      213: -1406608939974236467
-    second: intbuilding7a_3
-  - first:
-      213: 8854429079926026307
-    second: intbuilding7a_4
-  - first:
-      213: -7160146971211341591
-    second: C5
-  - first:
-      213: -7056207101791301689
-    second: intbuilding7a_5
-  - first:
-      213: -7466074316958994898
-    second: D5
-  - first:
-      213: 4099322771765912078
-    second: E5
+      213: 876405659932300948
+    second: DIRT
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -72,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: intbuilding7a_0
+      name: Space dirt_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 38
-        width: 36
-        height: 32
+        x: 145
+        y: 64
+        width: 31
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +124,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0741e69ac398248cdab8a11564a947f2
-      internalID: 3292684594807189452
+      spriteID: e3e215038c079464482afded627ecaef
+      internalID: 8667798015380430119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: intbuilding7a_1
+      name: Spacedirt_2
       rect:
         serializedVersion: 2
-        x: 146
-        y: 110
+        x: 208
+        y: 65
+        width: 15
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7d9d06db26447ac87c3a1205502140
+      internalID: 1895539317081381922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spacedirt_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 102
         width: 32
-        height: 32
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,146 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 135fb27e0412f664d97606fad80ccfa0
-      internalID: -6598422034451717792
+      spriteID: eb08bb0f89be34a39868fee17e9090b8
+      internalID: -4778238843874195431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: intbuilding7a_2
+      name: DIRT
       rect:
         serializedVersion: 2
-        x: 146
-        y: 37
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2b1468a753b1d94a9c43dd21590a37f
-      internalID: -2230159066450154401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: intbuilding7a_3
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 38
-        width: 32
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3912bffceaf0c0499966bf78d71f210
-      internalID: -1406608939974236467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: intbuilding7a_4
-      rect:
-        serializedVersion: 2
-        x: 218
-        y: 118
-        width: 32
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ec1db179c19df746a8b75d4c45e009e
-      internalID: 8854429079926026307
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C5
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 74
-        width: 33
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7d07078405504247843fa2851c5ecf4
-      internalID: -7160146971211341591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: intbuilding7a_5
-      rect:
-        serializedVersion: 2
-        x: 326
-        y: 74
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2cb0dd99c3cf43be980c5931f420887
-      internalID: -7056207101791301689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: D5
-      rect:
-        serializedVersion: 2
-        x: 362
-        y: 74
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcf35b1d3fa3344a1bcdf467d380a3bf
-      internalID: -7466074316958994898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: E5
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 74
-        width: 32
-        height: 32
+        x: 145
+        y: 81
+        width: 11
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54dc00d83aa0c420aa5a320f893b52c5
-      internalID: 4099322771765912078
+      spriteID: 9b2dafcbdfe0f416b8d5d93a4706e89f
+      internalID: 876405659932300948
       vertices: []
       indices: 
       edges: []

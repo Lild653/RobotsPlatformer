@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemies : MonoBehaviour
+public class BossBitch : MonoBehaviour
 {
 
     SpriteRenderer sprite;
-
     public float health = 60f; // can be changed
     public Rigidbody2D rb2d;
     public float speed = 2;
@@ -29,7 +28,7 @@ public class Enemies : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        
+
         if (health <= 0f)
         {
             Die();
@@ -40,7 +39,7 @@ public class Enemies : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -63,7 +62,7 @@ public class Enemies : MonoBehaviour
     {
         RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 3f);
         RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 3f);
-        
+
 
 
 
@@ -79,7 +78,7 @@ public class Enemies : MonoBehaviour
                     Instantiate(bullet, transform.position, Quaternion.identity);
 
                 }
-             
+
                 return true;
             }
 
@@ -100,17 +99,17 @@ public class Enemies : MonoBehaviour
 
 
                 }
-                
+
                 return true;
             }
         }
 
         return false;
-        
+
 
     }
 
- 
+
 
 
 
@@ -143,23 +142,23 @@ public class Enemies : MonoBehaviour
         if (sprite.flipX == false)
         {
             currentDirection = new Vector2(1, -1);
-            frontDirection = Physics2D.Raycast(transform.position, right, 1f);
+            frontDirection = Physics2D.Raycast(transform.position, right, 5f);
         }
         else
         {
             currentDirection = new Vector2(-1, -1);
-            frontDirection = Physics2D.Raycast(transform.position, left, 1f);
+            frontDirection = Physics2D.Raycast(transform.position, left, 5f);
         }
 
-        RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 2f);
+        RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 10f);
 
         if (forward.collider == null || forward.collider.CompareTag("Spike"))
         {
-            
+
             return false;
         }
-       
-        else if (frontDirection.collider ==null)
+
+        else if (frontDirection.collider == null)
         {
 
             return true;
@@ -180,9 +179,9 @@ public class Enemies : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         bulletSprite = bullet.GetComponent<SpriteRenderer>();
-        
-        
-}
+
+
+    }
 
     IEnumerator waiting()
     {
@@ -197,8 +196,8 @@ public class Enemies : MonoBehaviour
     {
         if (playerTracker())
         {
-            speed =0;
-            
+            speed = 0;
+
             StartCoroutine(waiting());
         }
         else if ((canMoveForward() == true))
@@ -229,6 +228,8 @@ public class Enemies : MonoBehaviour
         }
     }
 }
+
+
 
 
 
