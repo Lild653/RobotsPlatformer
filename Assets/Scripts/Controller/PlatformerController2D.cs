@@ -26,6 +26,8 @@ public class PlatformerController2D : MonoBehaviour
 
 	public Sprite invisible;
 
+	public int moveInt;
+
 
 	[Tooltip ("Can this object move.")]
 	public bool canMove = true;
@@ -274,7 +276,7 @@ public class PlatformerController2D : MonoBehaviour
     }
     public IEnumerator Die(){
 		GameObject deadPlayer = Instantiate<GameObject> (deadPrefab, transform.position, transform.rotation);
-		transform.position = transform.position + new Vector3(0,0,5);
+		transform.position = transform.position + new Vector3(0,0,moveInt);
 		yield return new WaitForSeconds (destroyTimer);
 		gameObject.SetActive(false);
 		Destroy(gameObject);
