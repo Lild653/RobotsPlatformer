@@ -3760,6 +3760,7 @@ MonoBehaviour:
   shootStance: {fileID: 21300000, guid: 3a666b6fc574345a084b0a3caa181cab, type: 3}
   deadBitch: []
   hurtBitch: []
+  portal: {fileID: 1766380021664298523, guid: f4f0ae258f95d4c9d969dcc34954cdfc, type: 3}
 --- !u!1001 &400438849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12736,12 +12737,12 @@ PrefabInstance:
     - target: {fileID: 5804527724366040566, guid: c5363436d1b4a4ee28940b20d5ea44dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.68
+      value: 34.72
       objectReference: {fileID: 0}
     - target: {fileID: 5804527724366040566, guid: c5363436d1b4a4ee28940b20d5ea44dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -39.3
+      value: -39.35
       objectReference: {fileID: 0}
     - target: {fileID: 5804527724366040566, guid: c5363436d1b4a4ee28940b20d5ea44dd,
         type: 3}
