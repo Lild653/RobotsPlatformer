@@ -168,7 +168,7 @@ MonoBehaviour:
     type: 3}
   invisible: {fileID: 8780030197197683658, guid: 38dcbcf51b49eef4d8d1808e4b977aeb,
     type: 3}
-  moveInt: 0
+  moveInt: 1
   canMove: 1
   speed: 5
   jumpVelocity: 15
