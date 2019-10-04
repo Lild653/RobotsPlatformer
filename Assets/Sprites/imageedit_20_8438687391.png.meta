@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -1438520589674958905
     second: imageedit_20_8438687391_1
+  - first:
+      213: 1236929642618655116
+    second: Boss_bullet
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -100,7 +103,7 @@ TextureImporter:
         width: 21
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,7 +124,7 @@ TextureImporter:
         width: 19
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,6 +132,27 @@ TextureImporter:
       bones: []
       spriteID: 4f77fad6ba194b8449d0399f06325f4d
       internalID: -1438520589674958905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_bullet
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 136
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b014f568c6740df8d655bfed7af145
+      internalID: 1236929642618655116
       vertices: []
       indices: 
       edges: []

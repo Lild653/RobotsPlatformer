@@ -23,6 +23,7 @@ public class BossBitch : MonoBehaviour
     public Sprite[] deadBitch;
     public Sprite[] hurtBitch;
     private SpriteRenderer bulletSprite;
+    public GameObject portal;
 
 
     public void TakeDamage(float amount)
@@ -36,7 +37,9 @@ public class BossBitch : MonoBehaviour
     }
     void Die()
     {
+        Instantiate(portal, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        
     }
 
 
@@ -60,8 +63,10 @@ public class BossBitch : MonoBehaviour
 
     public Boolean playerTracker()
     {
-        RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 3f);
-        RaycastHit2D right = Physics2D.Raycast(transform.position, Vector2.right, 3f);
+        Vector2 leftHit = new Vector2(-1, -1);
+        Vector2 rightHit = new Vector2(1, -1);
+        RaycastHit2D left = Physics2D.Raycast(transform.position, leftHit);
+        RaycastHit2D right = Physics2D.Raycast(transform.position, rightHit);
 
 
 
