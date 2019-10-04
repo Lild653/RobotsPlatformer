@@ -19,6 +19,9 @@ public class PlayerInputModule2D : MonoBehaviour
 	PlatformerController2D controller;
     private float lastShot;
     private float rateOfFire = 1;
+    private bool hit= false;
+    private float hitTimer = 1;
+    private float flashTimer = 0.2f;
     public GameObject bullet;
     public Sprite[] shooting;
     public SpriteRenderer bulletSprite;
@@ -64,11 +67,7 @@ public class PlayerInputModule2D : MonoBehaviour
         if (other.CompareTag("EnemyBullet")){
             GetComponent<Health>().HealthChange();
             Destroy(other.gameObject);
-            for(int i = 0; i < 5; i++ )
-            {
-                spr.material.color = Color.red;
-                spr.material.color = Color.white;                
-            }
+            hit = true;
         }
         else
         {
@@ -86,6 +85,32 @@ public class PlayerInputModule2D : MonoBehaviour
 
 	void Update ()
 	{
+        if(hit)
+        {
+            spr.material.color = Color.red;
+            hitTimer -= Time.deltaTime;
+            flashTimer -= Time.deltaTime;
+            if(hitTimer <= 0)
+            {
+                hit = false;
+                spr.material.color = Color.white;
+                hitTimer = 1;
+                flashTimer = 0.2f;
+            }
+            else
+            {
+                if(flashTimer <=0){
+                    if(spr.material.color == Color.white){
+                        spr.material.color = Color.red;
+                    }
+                    if(spr.material.color == Color.red){
+                        spr.material.color = Color.white;
+                    }
+                    flashTimer = 0.2f;
+                }
+            }
+
+        }
         shootingMechanic();
 		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		if (input.magnitude > 1) {
