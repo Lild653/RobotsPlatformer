@@ -48,8 +48,8 @@ public class Coin : MonoBehaviour
         if(other.CompareTag("Player")){
             AudioSource.PlayClipAtPoint(twinkleSound, transform.position);
             Instantiate(coinExplosion, transform.position, Quaternion.identity);
-            Destroy(gameObject);
             ScoreTextScript.coinAmount += 1;
+            Destroy(gameObject);
         }
         if (!other.CompareTag("Player"))
         {
