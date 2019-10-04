@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alison.unity
     guid: ac657b13bfb564e4db42bb2bcb7b871d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Danny.unity
     guid: 0c0eb459a95da4595800e20343905cfe
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: f0bf0e17f2380401992b2356d7aa8c4f
+  - enabled: 1
+    path: Assets/Scenes/DANNYFINAL.unity
+    guid: c7ee4bfce43dc4e68b30c682c1d9237c
   m_configObjects: {}
