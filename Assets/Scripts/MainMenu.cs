@@ -27,4 +27,12 @@ public class MainMenu : MonoBehaviour {
 	public void Quit(){
 		GameManager.Quit ();
 	}
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+    }
 }
