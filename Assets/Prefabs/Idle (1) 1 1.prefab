@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21812214915d346488dcd6fa99a52eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1611410900994922338, guid: 2e879e267c0ce45a09819ffda0273b26, type: 3}
+  bullet: {fileID: 2832559801948706023, guid: cd586ec808519f9479e9fd088aacd5a8, type: 3}
   shooting:
   - {fileID: 21300000, guid: 5ad67b8254a98460794c5d44675f5244, type: 3}
   - {fileID: 21300000, guid: 8ad2ab194adad4905b93b38c1fb09b6f, type: 3}
@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f7870fd53354ebab4e1b5ffafb0d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 0}
+  healthbar: {fileID: 5211984132169780819, guid: cf1cd57006b904f4ab11772cfbf5f7e4,
+    type: 3}
   currentscene:
     m_Handle: 0
 --- !u!114 &221407725347127795
