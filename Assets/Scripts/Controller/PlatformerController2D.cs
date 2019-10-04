@@ -269,7 +269,7 @@ public class PlatformerController2D : MonoBehaviour
 	}
     public void BulletTrigger()
     {
-        print("i got here");
+        //print("i got here");
         StartCoroutine(Die());
     }
     public IEnumerator Die(){
