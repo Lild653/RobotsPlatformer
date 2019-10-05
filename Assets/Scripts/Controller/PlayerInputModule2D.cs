@@ -39,7 +39,6 @@ public class PlayerInputModule2D : MonoBehaviour
         //Stashed changes
     }
 
-
     void shootingMechanic()
     {
         if (Input.GetKeyDown(KeyCode.Space))

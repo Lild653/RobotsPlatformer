@@ -15,7 +15,6 @@ public class Enemies : MonoBehaviour
     public float rateofFire;
     private float lastShot = 0;
     private float defaultSpeed = 2;
-    private Boolean correctCollider;
     public float animationTimer = 0;
     private int currentFrame = 0;
     public float animationFPS = 5;

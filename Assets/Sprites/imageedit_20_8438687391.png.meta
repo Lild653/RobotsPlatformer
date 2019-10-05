@@ -140,12 +140,12 @@ TextureImporter:
       name: Boss_bullet
       rect:
         serializedVersion: 2
-        x: 242
+        x: 280
         y: 136
         width: 13
         height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.51052386, y: 0.4999817}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

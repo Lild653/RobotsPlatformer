@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float damage = 10f;
-    private float range = 3f;
+    private float range = 6f;
     public float speed;
     private Vector2 bulletTravel;
     SpriteRenderer bulletSprite;

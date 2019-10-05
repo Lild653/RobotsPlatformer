@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DANNYFINAL.unity
     guid: c7ee4bfce43dc4e68b30c682c1d9237c
+  - enabled: 1
+    path: Assets/Scenes/Final Scene.unity
+    guid: 6da03e2bc5bed41e6bca0e2ea785f032
   m_configObjects: {}
