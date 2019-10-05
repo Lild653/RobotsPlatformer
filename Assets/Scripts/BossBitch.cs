@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Danny
 public class BossBitch : MonoBehaviour
 {
 
@@ -12,16 +13,13 @@ public class BossBitch : MonoBehaviour
     public float speed = 2;
     public GameObject bullet;
     public float rateofFire;
-    private float lastShot = 0;
+    private float lastShot =0;
     private float defaultSpeed = 2;
-    private Boolean correctCollider;
     public float animationTimer = 0;
     private int currentFrame = 0;
     public float animationFPS = 5;
     public Sprite[] movement;
     public Sprite shootStance;
-    public Sprite[] deadBitch;
-    public Sprite[] hurtBitch;
     private SpriteRenderer bulletSprite;
     public GameObject portal;
 
@@ -43,7 +41,7 @@ public class BossBitch : MonoBehaviour
     }
 
 
-
+    //Detects damage
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet"))
@@ -60,11 +58,15 @@ public class BossBitch : MonoBehaviour
 
 
 
-
+    //Shoots raycast in in both left and right direction of the player and then
+    //checks the colliders to see if the player object gets hit. If so, the sprite
+    //changes direction toward player and intstantiates a bullet. It then returns
+    //a boolean depending on whether or not the player was found by raycast
     public Boolean playerTracker()
     {
         Vector2 leftHit = new Vector2(-1, -1);
         Vector2 rightHit = new Vector2(1, -1);
+
         RaycastHit2D left = Physics2D.Raycast(transform.position, leftHit);
         RaycastHit2D right = Physics2D.Raycast(transform.position, rightHit);
 
@@ -117,7 +119,7 @@ public class BossBitch : MonoBehaviour
 
 
 
-
+    //Taken from Benno code
     public void PlayBackAnimation(Sprite[] anim)
     {
         animationTimer -= Time.deltaTime;
@@ -132,13 +134,14 @@ public class BossBitch : MonoBehaviour
             sprite.sprite = anim[currentFrame];
         }
     }
+
+    //Shoots short raycast straight out to make sure there is not a wall or other
+    //object in the path. It also shoots a raycast toward the ground to ensure there
+    //is a place to walk. Checks the colliders and returns a boolean depending on whether
+    //the character should walk forward or not.
     public Boolean canMoveForward()
     {
-        //Have to play around with this implenmentation in order to get the correct angle.
-        //Found that while it will stop, it will not flip and go into the other direction. I might need to implement that within this
-        //function instead of the update function
-        //tried it several ways, ititally using cos and sin as i had seen online. after lots of failure, I changed to Vector2 instead, and
-        //use -1,-1 to get the vecotr going at the angle that I wanted. It worked. Now i had to edit my function to get the enemey to flip directions
+      
 
         Vector2 currentDirection;
         RaycastHit2D frontDirection;
@@ -157,28 +160,31 @@ public class BossBitch : MonoBehaviour
 
         RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 10f);
 
+        //if there is no more ground, or there is a spike
         if (forward.collider == null || forward.collider.CompareTag("Spike"))
         {
 
             return false;
         }
-
+        //if there is no wall/obstacle
         else if (frontDirection.collider == null)
         {
 
             return true;
         }
+        //if the player is in front
         else if (frontDirection.collider.CompareTag("Player"))
         {
             return true;
         }
+        //if there is an obstacle
         else
         {
             return false;
         }
     }
 
-    //Shoot raycast at 45 degree angle to check if enemy can still move forward without falling off of platform
+
 
     void Start()
     {
@@ -188,6 +194,7 @@ public class BossBitch : MonoBehaviour
 
     }
 
+    //Shooting stance animation
     IEnumerator waiting()
     {
         sprite.sprite = shootStance;
@@ -199,12 +206,14 @@ public class BossBitch : MonoBehaviour
     void Update()
 
     {
+        //stops enemy if it's shooting
         if (playerTracker())
         {
             speed = 0;
 
             StartCoroutine(waiting());
         }
+        //if it can move, the enemy continues in the directio
         else if ((canMoveForward() == true))
         {
             speed = defaultSpeed;
@@ -223,6 +232,7 @@ public class BossBitch : MonoBehaviour
             }
 
         }
+        //otherwise it flips whatever direction it is in
         else if (sprite.flipX == false)
         {
             sprite.flipX = true;

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author: Danny
 public class GoldMember : MonoBehaviour
 {
     private SpriteRenderer goldilocks;
-    // Start is called before the first frame update
+
+    //Just changes the color to yellow
     void Start()
     {
         goldilocks = GetComponent<SpriteRenderer>();
@@ -14,9 +16,5 @@ public class GoldMember : MonoBehaviour
 
     
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    
 }

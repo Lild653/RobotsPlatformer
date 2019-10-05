@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Author: Danny
 public class Bullet : MonoBehaviour
 {
     public float damage = 10f;
@@ -10,8 +10,7 @@ public class Bullet : MonoBehaviour
     private Vector2 bulletTravel;
     SpriteRenderer bulletSprite;
     public string bulletDirection;
-    public string bulletType;
-    public Sprite[] bulletAnim;
+  
     
 
 
@@ -22,24 +21,7 @@ public class Bullet : MonoBehaviour
 
     }
 
-
-
-    
-
-
-    IEnumerator smokingGun()
-    {
-        for(int i = 0; i < bulletAnim.Length; i++)
-            {
-                bulletSprite.sprite = bulletAnim[i];
-                yield return new WaitForSeconds(1/20f);
-            }
-        
-        Destroy(gameObject);
-    }
-
-    
-
+    //determines orientation of bullet and passes a string into bulletDirection
     void bulletPath()
     {
         if (bulletSprite.flipX)
@@ -57,20 +39,21 @@ public class Bullet : MonoBehaviour
 
 
         bulletPath();
+        //moves bullet depending on which direction it needs to go in
         switch (bulletDirection)
         {
             case "left":
                 transform.position += Vector3.left * speed * Time.deltaTime;
                 if (Mathf.Abs(transform.position.x - bulletTravel.x) >= range)
                 {
-                    StartCoroutine(smokingGun());
+                    Destroy(gameObject);
                 }
                 break;
             case "right":
                 transform.position += Vector3.right * speed * Time.deltaTime;
                 if (Mathf.Abs(bulletTravel.x - transform.position.x) >= range)
                 {
-                    StartCoroutine(smokingGun());
+                    Destroy(gameObject);
                 }
                 break;
 
@@ -79,58 +62,5 @@ public class Bullet : MonoBehaviour
         
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    
-    public GameObject player;
-    SpriteRenderer sr;
-    SpriteRenderer enemy;
-    public GameObject bullet;
-    
-    void Start()
-    {
-        sr = GetComponent<SpriteRenderer>();
-        enemy = GetComponent<SpriteRenderer>();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        { 
-            Shoot();
-        }
-    }
-    void Shoot()
-    {
-        RaycastHit2D shot = Physics2D.Raycast(sr.transform.position, sr.transform.forward, range);
-        if (shot.collider!= null)
-        {
-            print("collider");
-            GameObject copybullet = Instantiate(bullet, transform.position, Quaternion.identity);
-            Rigidbody2D rb2d = copybullet.GetComponent<Rigidbody2D>();
-            rb2d.velocity = new Vector2(1, 0) * 10;
-            
-            //Destroy(shot.collider.enemy);
-        }
-
-
-            //Debug.Log(hit.transform.name);
-            //SpriteRenderer target = hit.transform.enemy;
-            //if (target != null)
-            //{
-            //    target.TakeDamage(damage);
-            //}
-    }
-    */
 }
 

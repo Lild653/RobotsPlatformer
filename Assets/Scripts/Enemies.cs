@@ -20,8 +20,6 @@ public class Enemies : MonoBehaviour
     public float animationFPS = 5;
     public Sprite[] movement;
     public Sprite shootStance;
-    public Sprite[] deadBitch;
-    public Sprite[] hurtBitch;
     private SpriteRenderer bulletSprite;
 
 
@@ -39,8 +37,8 @@ public class Enemies : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
 
+    //Detects damage
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet"))
@@ -57,7 +55,10 @@ public class Enemies : MonoBehaviour
 
 
 
-
+    //Shoots raycast in in both left and right direction of the player and then
+    //checks the colliders to see if the player object gets hit. If so, the sprite
+    //changes direction toward player and intstantiates a bullet. It then returns
+    //a boolean depending on whether or not the player was found by raycast
     public Boolean playerTracker()
     {
         RaycastHit2D left = Physics2D.Raycast(transform.position, Vector2.left, 3f);
@@ -109,10 +110,10 @@ public class Enemies : MonoBehaviour
 
     }
 
- 
 
 
 
+    //Taken from Benno code
     public void PlayBackAnimation(Sprite[] anim)
     {
         animationTimer -= Time.deltaTime;
@@ -127,6 +128,8 @@ public class Enemies : MonoBehaviour
             sprite.sprite = anim[currentFrame];
         }
     }
+
+
     public Boolean canMoveForward()
     {
         //Have to play around with this implenmentation in order to get the correct angle.
@@ -152,29 +155,32 @@ public class Enemies : MonoBehaviour
 
         RaycastHit2D forward = Physics2D.Raycast(transform.position, currentDirection, 2f);
 
+        //if there is no more ground, or there is a spike
         if (forward.collider == null || forward.collider.CompareTag("Spike"))
         {
-            
+
             return false;
         }
-       
-        else if (frontDirection.collider ==null)
+        //if there is no wall/obstacle
+        else if (frontDirection.collider == null)
         {
 
             return true;
         }
+        //if the player is in front
         else if (frontDirection.collider.CompareTag("Player"))
         {
             return true;
         }
+        //if there is an obstacle
         else
         {
             return false;
         }
     }
 
-    //Shoot raycast at 45 degree angle to check if enemy can still move forward without falling off of platform
 
+    
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -182,7 +188,7 @@ public class Enemies : MonoBehaviour
         
         
 }
-
+    //Shooting stance animation
     IEnumerator waiting()
     {
         sprite.sprite = shootStance;
@@ -194,12 +200,14 @@ public class Enemies : MonoBehaviour
     void Update()
 
     {
+        //stops enemy if it's shooting
         if (playerTracker())
         {
-            speed =0;
-            
+            speed = 0;
+
             StartCoroutine(waiting());
         }
+        //if it can move, the enemy continues in the directio
         else if ((canMoveForward() == true))
         {
             speed = defaultSpeed;
@@ -218,6 +226,7 @@ public class Enemies : MonoBehaviour
             }
 
         }
+        //otherwise it flips whatever direction it is in
         else if (sprite.flipX == false)
         {
             sprite.flipX = true;

@@ -32,20 +32,19 @@ public class PlayerInputModule2D : MonoBehaviour
 		controller = GetComponent<PlatformerController2D> ();
         spr = GetComponent<SpriteRenderer>();
         //Updated upstream
-        //ScoreTextScript.coinAmount = 0;
+        
         bulletSprite = bullet.GetComponent<SpriteRenderer>();
         
-        //
-        //Stashed changes
+        
     }
 
+    //Handles player shooting
     void shootingMechanic()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<PlatformerController2D>().PlayBackAnimation(shooting);
             if((lastShot + 1 / rateOfFire) < Time.time){
-                // StartCoroutine(shootingAnimation());
                 //lastShot = Time.time;
                 if (GetComponent<PlatformerController2D>().sr.flipX)
                 {
@@ -76,11 +75,6 @@ public class PlayerInputModule2D : MonoBehaviour
         
     }
 
-    IEnumerator shootingAnimation()
-    {
-
-        yield return new WaitForSeconds(10);
-    }
 
 	void Update ()
 	{
@@ -110,6 +104,7 @@ public class PlayerInputModule2D : MonoBehaviour
             }
 
         }
+
         shootingMechanic();
 		Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		if (input.magnitude > 1) {
